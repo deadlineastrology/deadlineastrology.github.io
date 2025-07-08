@@ -23,8 +23,9 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@dea
       li.style.margin = '30px 0';
       li.style.listStyle = 'none';
 
-      // Use Medium's thumbnail or fallback image
-      const image = item.thumbnail || 'https://via.placeholder.com/600x300?text=Medium+Post';
+      // Extract first image from content
+      let imgMatch = item.content.match(/<img.*?src=["'](.*?)["']/);
+      let image = imgMatch ? imgMatch[1] : 'https://via.placeholder.com/700x400?text=Tarot+%2B+Astrology';
 
       li.innerHTML = `
         <div style="max-width: 700px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left;">
@@ -48,4 +49,3 @@ fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@dea
     console.error('Medium feed error:', err);
   });
 </script>
-
