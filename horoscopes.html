@@ -4,80 +4,33 @@ title: Horoscopes
 permalink: /horoscopes/
 ---
 
-<h1 style="text-align:center;">Horoscopes</h1>
+<h1 style="text-align:center;">Latest Channeled Forecasts</h1>
+<p style="text-align:center;">🌟 Psychically channeled Tarot & Astrology readings, updated weekly on Medium.</p>
 
-<div style="text-align:center; margin: 20px 0;">
-  <label for="horoscope-select"><strong>Select Horoscope Type:</strong></label>
-  <select id="horoscope-select" onchange="switchHoroscope()">
-    <option value="daily">Daily</option>
-    <option value="weekly">Weekly</option>
-    <option value="monthly">Monthly</option>
-    <option value="medium">Medium Forecasts</option>
-  </select>
-</div>
-
-<div id="daily" class="horoscope-section">
-  <h2>Daily Horoscopes</h2>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.category == "daily" %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>
-
-<div id="weekly" class="horoscope-section" style="display:none;">
-  <h2>Weekly Horoscopes</h2>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.category == "weekly" %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>
-
-<div id="monthly" class="horoscope-section" style="display:none;">
-  <h2>Monthly Horoscopes</h2>
-  <ul>
-    {% for post in site.posts %}
-      {% if post.category == "monthly" %}
-        <li><a href="{{ post.url }}">{{ post.title }}</a> — {{ post.date | date: "%B %d, %Y" }}</li>
-      {% endif %}
-    {% endfor %}
-  </ul>
-</div>
-
-<div id="medium" class="horoscope-section" style="display:none;">
-  <h2>Latest on Medium</h2>
-  <ul id="medium-feed">
-    <li>Loading Medium content...</li>
-  </ul>
-</div>
+<ul id="medium-feed" style="list-style-type: none; padding: 0; text-align: center;">
+  <li>Loading posts...</li>
+</ul>
 
 <script>
-function switchHoroscope() {
-  const value = document.getElementById('horoscope-select').value;
-  const sections = document.querySelectorAll('.horoscope-section');
-  sections.forEach(s => s.style.display = 'none');
-  document.getElementById(value).style.display = 'block';
-}
-
-// Fetch and display Medium RSS feed
 fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@deadlineastrology')
   .then(res => res.json())
   .then(data => {
     const container = document.getElementById('medium-feed');
     container.innerHTML = '';
-    data.items.slice(0, 5).forEach(item => {
+    data.items.slice(0, 6).forEach(item => {
       const li = document.createElement('li');
-      li.innerHTML = `<a href="${item.link}" target="_blank">${item.title}</a> — ${new Date(item.pubDate).toLocaleDateString()}`;
+      li.style.margin = '20px 0';
+      li.innerHTML = `
+        <a href="${item.link}" target="_blank" style="font-size: 1.2em; font-weight: bold; color: #4B0082;">
+          ${item.title}
+        </a><br>
+        <small>${new Date(item.pubDate).toLocaleDateString()}</small>
+      `;
       container.appendChild(li);
     });
   })
   .catch(err => {
-    document.getElementById('medium-feed').innerHTML = '<li>Failed to load Medium posts.</li>';
+    document.getElementById('medium-feed').innerHTML = '<li>⚠️ Failed to load Medium posts.</li>';
     console.error('Medium feed error:', err);
   });
 </script>
