@@ -1,2 +1,2 @@
-# SaintNickyJK.github.io
+# deadlineastrology.github.io
 Deadline Astrology &amp; Tarot Forecasts
