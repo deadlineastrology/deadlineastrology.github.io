@@ -4,10 +4,63 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - Deadline Astrology</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
   <style>
+    /* Global body font */
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #eaeaea;
+      background-color: #121212; /* optional dark background */
+      margin: 0;
+      padding: 2rem 1rem;
+      line-height: 1.6;
+    }
+
+    /* About header */
+    .about-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-header h2 {
+      font-family: 'UnifrakturCook', cursive;
+      font-weight: 400;
+      font-size: 2.5rem;
+      color: #b2d6ff;
+      margin: 0;
+      flex: 1 1 auto;
+      text-align: center;
+    }
+
+    .about-header img {
+      max-width: 200px;
+      height: auto;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .about-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    /* Paragraph styling */
+    p {
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      font-size: 1.125rem;
+      color: #ccc;
+    }
+
     /* Blue accent button style */
     .button {
       background: #b2d6ff; /* soft blue */
@@ -21,6 +74,11 @@
       display: inline-block;
       text-align: center;
       box-shadow: none;
+      user-select: none;
+      cursor: pointer;
+      max-width: 320px;
+      margin: 0 auto;
+      display: block;
     }
 
     .button:hover {
@@ -31,31 +89,8 @@
 
     /* Button container for spacing */
     .cta-buttons {
-      display: flex;
-      justify-content: center;
-      margin-top: 2rem;
-    }
-
-    /* About section header layout */
-    .about-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    .about-header img {
-      max-width: 200px;
-      height: auto;
-      border-radius: 50%;
-    }
-
-    @media (max-width: 600px) {
-      .about-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
+      margin-top: 0;
+      text-align: center;
     }
   </style>
 </head>
@@ -65,7 +100,7 @@
   <section id="about">
     <div class="about-header">
       <h2>🔮 Deadline Astrology - About Me</h2>
-      <img src="assets/face_pic.png" alt="Saint Nicky JK">
+      <img src="assets/face_pic.png" alt="Saint Nicky JK" />
     </div>
 
     <p>
