@@ -79,7 +79,7 @@ header img.site-banner:hover {
   bottom: -4px;
   width: 0;
   height: 2px;
-  background: #00cc66;
+  background: #b2d6ff;
   transition: width 0.3s ease-in-out;
 }
 
@@ -88,16 +88,10 @@ header img.site-banner:hover {
   width: 100%;
 }
 
-/* Glow on hover */
 #main-nav a:hover {
-  color: #66ffe0;
-  text-shadow:
-    0 0 5px #66ffe0,
-    0 0 10px #66ffe0,
-    0 0 20px #66ffe0;
+  color: #d3e4ff;
 }
 
-/* Flicker neon animation on click only */
 #main-nav a:active {
   animation: flicker 1.2s linear;
 }
@@ -171,33 +165,30 @@ main, section, .blog-post, .service-item {
 }
 
 .button, .reading-button {
-  background: #00cc66;
-  color: #fff;
+  background: #b2d6ff;
+  color: #111;
   text-decoration: none;
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   font-weight: 600;
   font-size: 1.1rem;
   transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-  box-shadow: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
   user-select: none;
 }
 
-/* Glow on hover */
 .button:hover,
 .reading-button:hover {
-  background: #00994d;
-  transform: scale(1.05);
-  box-shadow:
-    0 0 8px #66ffe0,
-    0 0 16px #66ffe0,
-    0 0 32px #66ffe0;
+  background: #9ac4f7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
-/* Flicker neon animation on click only */
 .button:active,
 .reading-button:active {
-  animation: flicker 1.2s linear;
+  background: #86b5f0;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
 
 /* ========== FORECAST VIDEO ========== */
