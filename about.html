@@ -80,6 +80,24 @@
       margin-top: 0;
       text-align: center;
     }
+
+    /* PayPal link styling */
+    .paypal-link {
+      display: inline-block;
+      background: #ffc439;
+      color: #111;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    .paypal-link:hover {
+      background: #ffb347;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -111,6 +129,19 @@
       Additionally I offer <strong> In-depth Birth Chart Destiny Readings</strong> — If you are interested in <strong> Knowing Your Destiny and/or Personality strengths & weaknesses </strong>.
       Get started by clicking below.
     </p>
+
+    <!-- PayPal Donate Link -->
+    <div class="cta-buttons">
+      <a href="https://www.paypal.com/donate/?hosted_button_id=AA6QGJM8BQU56" 
+         class="paypal-link" 
+         target="_blank" 
+         rel="noopener noreferrer">
+         💖 I look forward to speaking soon.
+      </a>
+    </div>
+
+    <!-- New image under PayPal button -->
+    <img src="assets/Nickydragonface.png" alt="Nicky Dragon Face" class="centered-image" />
 
   </section>
 </body>
