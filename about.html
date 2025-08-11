@@ -1,113 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About - Deadline Astrology</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="header.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saint Nicky JK - Astrology & Tarot Readings</title>
+  <link rel="stylesheet" href="styles.css">
   <style>
-    /* Global body font */
     body {
-      font-family: 'Inter', sans-serif;
-      color: #eaeaea;
-      background-color: #121212; /* optional dark background */
+      font-family: 'Merriweather', serif;
       margin: 0;
-      padding: 2rem 1rem;
-      line-height: 1.6;
-    }
-
-    /* About header */
-    .about-header {
+      padding: 0;
+      background-color: #000;
+      color: #fff;
       text-align: center;
-      margin-bottom: 2rem;
     }
 
-    .about-header h2 {
-      font-family: 'UnifrakturCook', cursive;
-      font-weight: 400;
-      font-size: 2.5rem;
-      color: #b2d6ff;
-      margin-bottom: 1rem;
+    header {
+      background-color: #111;
+      padding: 1rem 0;
     }
 
-    /* New image under heading */
-    .about-header img {
-      max-width: 100%;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+    }
+
+    nav a {
+      color: #66b2ff; /* Blue we talked about */
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    #about {
+      max-width: 800px;
+      margin: 3rem auto;
+      padding: 0 1rem;
+    }
+
+    #about p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .about-image {
+      width: 100%;
+      max-width: 500px;
       height: auto;
       border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
 
-    /* Paragraph styling */
-    p {
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      font-size: 1.125rem;
+    footer {
+      margin-top: 3rem;
+      padding: 1rem;
+      background-color: #111;
+      font-size: 0.9rem;
       color: #ccc;
-      text-align: center;
-    }
-
-    /* Blue accent button style */
-    .button {
-      background: #b2d6ff; /* soft blue */
-      color: #0a0a0a; /* dark text for contrast */
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: background 0.3s ease, transform 0.2s ease;
-      display: inline-block;
-      text-align: center;
-      box-shadow: none;
-      user-select: none;
-      cursor: pointer;
-      max-width: 320px;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .button:hover {
-      background: #8ab8ff; /* slightly darker blue on hover */
-      transform: scale(1.05);
-      box-shadow: none; /* keep it flat and elegant */
-    }
-
-    /* Button container for spacing */
-    .cta-buttons {
-      margin-top: 0;
-      text-align: center;
     }
   </style>
 </head>
 <body>
-  <div id="header-container"></div>
 
-  <section id="about">
-    <div class="about-header">
-      <h2>🔮 Deadline Astrology - About Me</h2>
-      <img src="assets/Abouttarot.png" alt="About Deadline Astrology" />
-    </div>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <p>
-      My name is <strong>Saint Nicky JK</strong> — Astrologer, Tarot Reader and founder of <strong>Deadline Astrology</strong>.
-      I offer live, chat-based Astrology and Tarot readings where you can connect with me in real time.
-    </p>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        My name is Saint Nicky JK — Astrologer, Tarot Reader and founder of Deadline Astrology.  
+        I offer live, chat-based Astrology and Tarot readings where you can connect with me in real time.
+      </p>
+      <img src="images/your-image.jpg" alt="Saint Nicky JK" class="about-image">
+    </section>
+  </main>
 
-    <div class="cta-buttons">
-      <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
-         class="button" 
-         target="_blank" 
-         rel="noopener noreferrer">
-         ✨ Start a Live Chat With Me — First 3 Minutes Free
-      </a>
-    </div>
+  <footer>
+    &copy; 2025 Saint Nicky JK. All rights reserved.
+  </footer>
 
-    <p>
-      Additionally I offer <strong>Birth Chart Destiny Readings</strong> — If you are interested in an <strong>In-depth Astrology Birth Chart Destiny Reading</strong>.
-      Get started by clicking below.
-    </p>
-  </section>
 </body>
 </html>
