@@ -4,19 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deadline Astrology</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
+  <style>
+    /* Apply fonts */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212; /* optional: dark background for contrast */
+      color: #eaeaea;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-family: 'UnifrakturCook', cursive;
+      font-weight: 400;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #b2d6ff; /* match your accent blue */
+    }
+
+    #intro-actions {
+      padding: 4rem 1rem 6rem;
+      background: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+    }
+
+    .cta-buttons {
+      margin-top: 2rem;
+    }
+
+    .button {
+      background: #b2d6ff;
+      color: #0a0a0a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      box-shadow: none;
+    }
+
+    .button:hover {
+      background: #8ab8ff;
+      transform: scale(1.05);
+      box-shadow: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #aaa;
+      background-color: #0d0d0d;
+    }
+  </style>
 </head>
 <body>
   <div id="header-container"></div>
 
   <!-- 🔮 Main Action Section -->
   <section id="intro-actions" class="section hero">
-    <h1> Free 3 minute readings available now </h1>
+    <h1>Free 3 minute readings available now</h1>
     <div class="cta-buttons">
-      <a href="about.html" class="button">🔮 Get Started </a>
+      <a href="about.html" class="button">🔮 Get Started</a>
     </div>
+  </section>
+
   <footer>
     <p>&copy; 2025 Deadline Astrology. All rights reserved.</p>
   </footer>
