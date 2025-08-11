@@ -8,8 +8,9 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
   <style>
+    /* Button style */
     .button {
-      background: #00cc66;
+      background: #00cc66; /* same green as earlier */
       color: #fff;
       text-decoration: none;
       padding: 0.75rem 1.5rem;
@@ -22,18 +23,18 @@
     }
 
     .button:hover {
-      background: #00994d;
+      background: #00994d; /* darker green on hover */
       transform: scale(1.05);
     }
 
+    /* Button container for spacing */
     .cta-buttons {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      align-items: center;
-      margin: 2rem 0;
+      justify-content: center;
+      margin-top: 2rem;
     }
 
+    /* About section header layout */
     .about-header {
       display: flex;
       align-items: center;
@@ -69,8 +70,14 @@
       My name is <strong>Saint Nicky JK</strong> — Astrologer, Tarot Reader and founder of <strong>Deadline Astrology</strong>.
       I offer live, chat-based Astrology and Tarot readings where you can connect with me in real time.
     </p>
+
     <div class="cta-buttons">
-      <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" class="button" target="_blank">✨ Start a Live Chat With Me — First 3 Minutes Free</a>
+      <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
+         class="button" 
+         target="_blank" 
+         rel="noopener noreferrer">
+         ✨ Start a Live Chat With Me — First 3 Minutes Free
+      </a>
     </div>
   </section>
 </body>
