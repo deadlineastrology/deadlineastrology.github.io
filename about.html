@@ -12,7 +12,7 @@
     body {
       font-family: 'Inter', sans-serif;
       color: #eaeaea;
-      background-color: #121212; /* optional dark background */
+      background-color: #121212; /* dark background */
       margin: 0;
       padding: 2rem 1rem;
       line-height: 1.6;
@@ -32,8 +32,10 @@
       margin-bottom: 1rem;
     }
 
-    /* New image under heading */
-    .about-header img {
+    /* Centered image styling */
+    .centered-image {
+      display: block;
+      margin: 0 auto 2rem;
       max-width: 100%;
       height: auto;
       border-radius: 8px;
@@ -65,16 +67,15 @@
       cursor: pointer;
       max-width: 320px;
       margin: 0 auto;
-      display: block;
     }
 
     .button:hover {
       background: #8ab8ff; /* slightly darker blue on hover */
       transform: scale(1.05);
-      box-shadow: none; /* keep it flat and elegant */
+      box-shadow: none;
     }
 
-    /* Button container for spacing */
+    /* Button container */
     .cta-buttons {
       margin-top: 0;
       text-align: center;
@@ -94,8 +95,10 @@
       I offer live, chat-based Astrology and Tarot readings where you can connect with me in real time.
     </p>
 
-<img src="assets/Abouttarot.png" alt="About Deadline Astrology" />    <div class="cta-buttons">
+    <!-- Centered first image -->
+    <img src="assets/Abouttarot.png" alt="About Deadline Astrology" class="centered-image" />
 
+    <div class="cta-buttons">
       <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
          class="button" 
          target="_blank" 
@@ -108,6 +111,9 @@
       Additionally I offer <strong>Birth Chart Destiny Readings</strong> — If you are interested in an <strong>In-depth Astrology Birth Chart Destiny Reading</strong>.
       Get started by clicking below.
     </p>
+
+    <!-- Centered second image -->
+    <img src="assets/aboutastrology.png" alt="About Astrology" class="centered-image" />
   </section>
 </body>
 </html>
