@@ -8,34 +8,45 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
   <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+  <style>
+    /* Extra spacing fix for buttons inside service-item */
+    .service-item a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   <div id="header-container"></div>
+  
   <section id="services">
     <h2>🔮 Personal Readings & Services</h2>
 
     <div class="service-item">
-  <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free </h3>
-  <p>Quick answers to key questions Live Right.</p>
-  <div>
-    <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
-       class="button" 
-       target="_blank" 
-       rel="noopener noreferrer">
-       Start Live Chat
-    </a>
-  </div>
-</div>
-
+      <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free </h3>
+      <p>Quick answers to key questions Live Right.</p>
+      <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
+         class="button" 
+         target="_blank" 
+         rel="noopener noreferrer">
+         Start Live Chat
+      </a>
+    </div>
 
     <div class="service-item">
-      <h3>🪐Birth Chart Reading — $50</h3>
+      <h3>🪐 Birth Chart Reading — $50</h3>
       <p>In-Depth Birth Chart Reading</p>
       <div id="paypal-container-AA6QGJM8BQU56"></div>
-      <script>paypal.HostedButtons({ hostedButtonId: "AA6QGJM8BQU56" }).render("#paypal-container-AA6QGJM8BQU56");</script>
+      <script>
+        paypal.HostedButtons({
+          hostedButtonId: "AA6QGJM8BQU56"
+        }).render("#paypal-container-AA6QGJM8BQU56");
+      </script>
     </div>
 
   </section>
+
   <footer>&copy; 2025 Deadline Astrology. All rights reserved.</footer>
 </body>
 </html>
