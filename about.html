@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About - Deadline Astrology</title>
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
   <style>
     body {
@@ -45,6 +46,7 @@
       text-align: center;
     }
 
+    /* Blue accent button style */
     .button {
       background: #b2d6ff;
       color: #0a0a0a;
@@ -56,6 +58,7 @@
       transition: background 0.3s ease, transform 0.2s ease;
       display: inline-block;
       text-align: center;
+      box-shadow: none;
       user-select: none;
       cursor: pointer;
       max-width: 320px;
@@ -65,32 +68,12 @@
     .button:hover {
       background: #8ab8ff;
       transform: scale(1.05);
+      box-shadow: none;
     }
 
     .cta-buttons {
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-top: 0;
       text-align: center;
-    }
-
-    /* Make second button match first button style */
-    .blue-link {
-      background: #b2d6ff;
-      color: #0a0a0a;
-      text-decoration: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      transition: background 0.3s ease, transform 0.2s ease;
-      display: inline-block;
-      text-align: center;
-      max-width: 320px;
-    }
-
-    .blue-link:hover {
-      background: #8ab8ff;
-      transform: scale(1.05);
     }
   </style>
 </head>
@@ -99,40 +82,40 @@
 
   <section id="about">
     <div class="about-header">
-      <h2>🔮 Deadline Astrology 🔮</h2>
-      <h2>About Me</h2>
+      <h2>🔮 Deadline Astrology 🔮 </h2>
+      <h2> About Me </h2>
     </div>
 
-    <!-- First image -->
+    <!-- Centered first image -->
     <img src="assets/aboutme.jpg" alt="About Deadline Astrology" class="centered-image" />
 
     <p>
-      My name is <strong>Saint Nicky JK</strong> — Astrologer, Tarot Reader, and founder of <strong>Deadline Astrology</strong>.
+      My name is <strong>Saint Nicky JK</strong> — Astrologer, Tarot Reader and founder of <strong>Deadline Astrology</strong>.
       I offer live, chat-based Astrology and Tarot readings where you can connect with me in real time.
     </p>
 
     <!-- Start Live Chat button -->
-    <div class="cta-buttons">
+    <div class="cta-buttons" style="margin-bottom: 2rem;">
       <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
          class="button" 
          target="_blank" 
          rel="noopener noreferrer">
-         ✨ Start Live Chat ✨
+         ✨Start Live Chat✨      
       </a>
     </div>
 
-    <!-- Dragon face image with space above -->
+    <!-- Dragon face image now below with spacing -->
     <img src="assets/Nickydragonface.png" alt="Nicky Dragon Face" class="centered-image" />
 
     <p>
-      Additionally, I offer <strong>In-depth Birth Chart Destiny Readings</strong> — If you are interested in <strong>Knowing Your Destiny and/or Personality strengths & weaknesses</strong>,
-      get started by clicking below.
+      Additionally I offer <strong>In-depth Birth Chart Destiny Readings</strong> — If you are interested in <strong>Knowing Your Destiny and/or Personality strengths & weaknesses</strong>.
+      Get started by clicking below.
     </p>
 
-    <!-- Get Yours Now button (blue style) -->
+    <!-- Second button now same blue style as first -->
     <div class="cta-buttons">
       <a href="https://deadlineastrology.github.io/services.html" 
-         class="blue-link" 
+         class="button" 
          target="_blank" 
          rel="noopener noreferrer">
           Get Yours Now
