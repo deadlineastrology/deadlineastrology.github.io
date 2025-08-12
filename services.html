@@ -12,6 +12,21 @@
   <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
 
   <style>
+
+@media (min-width: 768px) {
+  /* Target the PayPal hosted button container */
+  #paypal-container-AA6QGJM8BQU56 > div {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 10px;
+  }
+  /* Optionally shrink PayPal SVG or images inside to fit nicely */
+  #paypal-container-AA6QGJM8BQU56 > div > * {
+    flex-shrink: 0;
+  }
+}
     /* Your original button style */
     .service-item a.button {
       display: inline-block;
