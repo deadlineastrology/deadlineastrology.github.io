@@ -1,84 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services - Deadline Astrology</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="header.js" defer></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-
-  <style>
-    /* Minimal flex layout on desktop */
-    @media (min-width: 768px) {
-      .service-item {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-      }
-      .service-item img {
-        max-width: 400px;
-        width: 400px;
-        height: auto;
-        margin: 0;
-        flex-shrink: 0;
-      }
-      .service-item > div {
-        flex: 1;
-      }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Services - Deadline Astrology</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 1rem;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .service-item {
+    margin-bottom: 2.5rem;
+  }
+  /* Mobile: stacked */
+  .service-item img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 6px;
+  }
+  /* Desktop: flex side-by-side */
+  @media (min-width: 768px) {
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
     }
-
-    /* Responsive image on mobile */
     .service-item img {
-      width: 100%;
-      max-width: 400px;
-      height: auto;
-      margin: 0.5rem 0;
-      border-radius: 4px;
+      width: 400px;
+      margin-bottom: 0;
+      flex-shrink: 0;
     }
-  </style>
+    .service-item div {
+      flex: 1;
+    }
+  }
+  .button {
+    display: inline-block;
+    background: #0070ba;
+    color: white;
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  .button:hover {
+    background: #005c99;
+  }
+</style>
 </head>
 <body>
-  <div id="header-container"></div>
 
-  <section id="services">
-    <h2>🔮 Personal Readings & Services</h2>
+<h2>🔮 Personal Readings & Services</h2>
 
-    <!-- Live Chat Section -->
-    <div class="service-item">
-      <img src="assets/livechat.jpg" alt="Live Chat" />
-      <div>
-        <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
-        <p>Quick answers to key questions Live Right.</p>
-        <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology"
-           class="button"
-           target="_blank"
-           rel="noopener noreferrer">
-          Start Live Chat
-        </a>
-      </div>
-    </div>
+<div class="service-item">
+  <img src="assets/livechat.jpg" alt="Live Chat" />
+  <div>
+    <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
+    <p>Quick answers to key questions Live Right.</p>
+    <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" class="button" target="_blank" rel="noopener noreferrer">Start Live Chat</a>
+  </div>
+</div>
 
-    <!-- Birth Chart Reading -->
-    <div class="service-item">
-      <img src="assets/birthchart.jpg" alt="Birth Chart Reading" />
-      <div>
-        <h3>🪐 Birth Chart Reading — $50</h3>
-        <p>In-Depth Birth Chart Reading</p>
-        <div id="paypal-container-AA6QGJM8BQU56"></div>
-      </div>
-    </div>
+<div class="service-item">
+  <img src="assets/birthchart.jpg" alt="Birth Chart Reading" />
+  <div>
+    <h3>🪐 Birth Chart Reading — $50</h3>
+    <p>In-Depth Birth Chart Reading</p>
+    <div id="paypal-container-AA6QGJM8BQU56"></div>
+  </div>
+</div>
 
-  </section>
+<!-- PayPal SDK and button rendering -->
+<script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+<script>
+  paypal.HostedButtons({
+    hostedButtonId: "AA6QGJM8BQU56"
+  }).render("#paypal-container-AA6QGJM8BQU56");
+</script>
 
-  <footer>&copy; 2025 Deadline Astrology. All rights reserved.</footer>
-
-  <!-- PayPal Render Script -->
-  <script>
-    paypal.HostedButtons({
-      hostedButtonId: "AA6QGJM8BQU56"
-    }).render("#paypal-container-AA6QGJM8BQU56");
-  </script>
 </body>
 </html>
