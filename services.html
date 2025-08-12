@@ -9,7 +9,27 @@
   <script src="header.js" defer></script>
   <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
   <style>
-    /* Extra spacing fix for buttons inside service-item */
+    /* Layout for service items with image */
+    .service-item {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .service-text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .service-item img {
+      max-width: 250px;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    /* Keep existing button spacing */
     .service-item a.button {
       display: inline-block;
       margin-top: 1rem;
@@ -24,21 +44,30 @@
     <h2>🔮 Personal Readings & Services</h2>
 
     <div class="service-item">
-      <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free </h3>
-      <p>Quick answers to key questions Live Right.</p>
-      <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
-         class="button" 
-         target="_blank" 
-         rel="noopener noreferrer">
-         Start Live Chat
-      </a>
+      <div class="service-text">
+        <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free </h3>
+        <p>Quick answers to key questions Live Right.</p>
+        <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
+           class="button" 
+           target="_blank" 
+           rel="noopener noreferrer">
+           Start Live Chat
+        </a>
+      </div>
+      <img src="assets/livechat.jpg" alt="Live Chat Psychic Reading">
     </div>
 
-<div class="service-item">
-      <h3>🪐Birth Chart Reading — $50</h3>
-      <p>In-Depth Birth Chart Reading</p>
-      <div id="paypal-container-AA6QGJM8BQU56"></div>
-      <script>paypal.HostedButtons({ hostedButtonId: "AA6QGJM8BQU56" }).render("#paypal-container-AA6QGJM8BQU56");</script>
+    <div class="service-item">
+      <div class="service-text">
+        <h3>🪐 Birth Chart Reading — $50</h3>
+        <p>In-Depth Birth Chart Reading</p>
+        <div id="paypal-container-AA6QGJM8BQU56"></div>
+        <script>
+          paypal.HostedButtons({
+            hostedButtonId: "AA6QGJM8BQU56"
+          }).render("#paypal-container-AA6QGJM8BQU56");
+        </script>
+      </div>
     </div>
 
   </section>
