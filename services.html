@@ -14,12 +14,18 @@
       margin-top: 1rem;
       text-align: center;
     }
-    .centered-content {
-      text-align: center;
+    /* Override centered-content to be left aligned */
+    .service-item {
+      text-align: left;
+      max-width: 450px; /* Optional: keep it neat */
+      margin-bottom: 2rem;
     }
-    .centered-content img {
+    .service-item img {
       display: block;
-      margin: 0.5rem auto;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+      max-width: 400px;
+      height: auto;
     }
   </style>
 </head>
@@ -30,10 +36,10 @@
     <h2>🔮 Personal Readings & Services</h2>
 
     <!-- Live Chat Section -->
-    <div class="service-item centered-content">
-      <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free </h3>
+    <div class="service-item">
+      <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
       <p>Quick answers to key questions Live Right.</p>
-      <img src="assets/livechat.jpg" alt="Live Chat" style="width: 400px; height: auto;" />
+      <img src="assets/livechat.jpg" alt="Live Chat" />
       <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
          class="button" 
          target="_blank" 
@@ -43,7 +49,7 @@
     </div>
 
     <!-- Birth Chart Reading -->
-    <div class="service-item centered-content">
+    <div class="service-item">
       <h3>🪐 Birth Chart Reading — $50</h3>
       <p>In-Depth Birth Chart Reading</p>
       <div id="paypal-container-AA6QGJM8BQU56"></div>
