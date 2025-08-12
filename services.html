@@ -2,60 +2,133 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services - Deadline Astrology</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
   <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
   <style>
-    .service-item a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      text-align: center;
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0 1rem;
+      background: #fff;
+      color: #111;
     }
-    /* Left align service items */
+    h2 {
+      font-family: 'UnifrakturCook', cursive;
+      text-align: center;
+      margin: 2rem 0 3rem;
+      font-size: 2.5rem;
+    }
+    /* Service container */
+    #services {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+    }
+    /* Base service item - stacked mobile */
     .service-item {
       text-align: left;
-      max-width: 450px; /* Optional: keeps content neat */
-      margin-bottom: 2rem;
+      margin-bottom: 3rem;
     }
-    /* Responsive image */
     .service-item img {
       display: block;
-      margin-top: 0.5rem;
-      margin-bottom: 0.5rem;
+      width: 100%;
       max-width: 400px;
-      width: 100%;    /* scales down on smaller screens */
-      height: auto;   /* maintains aspect ratio */
-      box-sizing: border-box;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgb(0 0 0 / 0.15);
+      object-fit: cover;
     }
+    .service-item h3 {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 1.5rem;
+    }
+    .service-item p {
+      margin: 0 0 1rem 0;
+      font-size: 1.1rem;
+      line-height: 1.4;
+      color: #333;
+    }
+    .service-item a.button {
+      display: inline-block;
+      background-color: #0070ba; /* PayPal blue */
+      color: white;
+      padding: 0.6rem 1.3rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-align: center;
+      box-shadow: 0 4px 8px rgb(0 112 186 / 0.4);
+      transition: background-color 0.3s ease;
+    }
+    .service-item a.button:hover {
+      background-color: #005c99;
+    }
+
+    /* Desktop layout: side-by-side flex */
+    @media (min-width: 768px) {
+      .service-item {
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+        margin-bottom: 4rem;
+      }
+      .service-item img {
+        width: 350px;
+        max-width: 350px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+      }
+      .service-item > div, /* For paypal container sibling */
+      .service-item > p,
+      .service-item > h3,
+      .service-item > a.button {
+        text-align: left;
+      }
+      .service-item > div, /* group text + button on right */
+      .service-item > h3,
+      .service-item > p,
+      .service-item > a.button {
+        max-width: 500px;
+      }
+    }
+
   </style>
 </head>
 <body>
   <div id="header-container"></div>
-  
+
   <section id="services">
     <h2>🔮 Personal Readings & Services</h2>
 
     <!-- Live Chat Section -->
     <div class="service-item">
-      <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
-      <p>Quick answers to key questions Live Right.</p>
       <img src="assets/livechat.jpg" alt="Live Chat" />
-      <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
-         class="button" 
-         target="_blank" 
-         rel="noopener noreferrer">
-         Start Live Chat
-      </a>
+      <div>
+        <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
+        <p>Quick answers to key questions Live Right.</p>
+        <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology"
+           class="button"
+           target="_blank"
+           rel="noopener noreferrer">
+          Start Live Chat
+        </a>
+      </div>
     </div>
 
     <!-- Birth Chart Reading -->
     <div class="service-item">
-      <h3>🪐 Birth Chart Reading — $50</h3>
-      <p>In-Depth Birth Chart Reading</p>
-      <div id="paypal-container-AA6QGJM8BQU56"></div>
+      <img src="assets/birthchart.jpg" alt="Birth Chart Reading" />
+      <div>
+        <h3>🪐 Birth Chart Reading — $50</h3>
+        <p>In-Depth Birth Chart Reading</p>
+        <div id="paypal-container-AA6QGJM8BQU56"></div>
+      </div>
     </div>
 
   </section>
