@@ -14,18 +14,21 @@
       margin-top: 1rem;
       text-align: center;
     }
-    /* Override centered-content to be left aligned */
+    /* Left align service items */
     .service-item {
       text-align: left;
-      max-width: 450px; /* Optional: keep it neat */
+      max-width: 450px; /* Optional: keeps content neat */
       margin-bottom: 2rem;
     }
+    /* Responsive image */
     .service-item img {
       display: block;
       margin-top: 0.5rem;
       margin-bottom: 0.5rem;
       max-width: 400px;
-      height: auto;
+      width: 100%;    /* scales down on smaller screens */
+      height: auto;   /* maintains aspect ratio */
+      box-sizing: border-box;
     }
   </style>
 </head>
