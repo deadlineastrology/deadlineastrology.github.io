@@ -3,86 +3,109 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services - Deadline Astrology</title>
-  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <script src="header.js" defer></script>
-
-  <!-- PayPal SDK (needed for hosted buttons) -->
-  <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
-
+  <title>About Me - Deadline Astrology</title>
   <style>
-    /* Layout for service items with image */
-    .service-item {
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0d0d0d;
+      color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 900px;
+      background-color: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 15px rgba(255, 215, 0, 0.5);
     }
 
-    /* For the first service, image on the left */
-    .service-item.image-left {
-      flex-direction: row; /* image first, then text */
-    }
-
-    .service-item img {
-      height: auto;
-      border-radius: 8px;
-      max-width: 100%; /* keep natural size but responsive */
-    }
-
-    .service-text {
+    .image {
       flex: 1;
-      min-width: 250px;
     }
 
-    /* Extra spacing fix for buttons inside service-item */
-    .service-item a.button {
-      display: inline-block;
-      margin-top: 1rem;
-      text-align: center;
+    .image img {
+      width: 100%;
+      max-width: 300px; /* Match PayPal image size */
+      border-radius: 10px;
+      display: block;
+    }
+
+    .content {
+      flex: 2;
+    }
+
+    h1 {
+      color: gold;
+      font-family: 'Amatic SC', cursive;
+      font-size: 2.5rem;
+    }
+
+    p {
+      line-height: 1.6;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .buttons a {
+      background-color: gold;
+      color: black;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .buttons a:hover {
+      background-color: darkgoldenrod;
     }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="header-container"></div>
-  
-  <section id="services">
-    <h2>🔮 Personal Readings & Services</h2>
-
-    <!-- First service with image on the left -->
-    <div class="service-item image-left">
-      <img src="assets/livechat.jpg" alt="Live Chat - Psychic Reading">
-      <div class="service-text">
-        <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
-        <p>Quick answers to key questions Live Right.</p>
-        <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
-           class="button" 
-           target="_blank" 
-           rel="noopener noreferrer">
-           Start Live Chat
-        </a>
-      </div>
+  <div class="container">
+    <!-- First image on left -->
+    <div class="image">
+      <img src="first-image.jpg" alt="Astrology Graphic">
     </div>
 
-    <!-- Second service with PayPal button -->
-    <div class="service-item">
-      <div class="service-text">
-        <h3>🪐 Birth Chart Reading — $50</h3>
-        <p>In-Depth Birth Chart Reading</p>
+    <div class="content">
+      <h1>About Me</h1>
+      <p>
+        My name is Saint Nicky JK — Astrologer and founder of Deadline Astrology.  
+        I offer live, chat-based Astrology and Tarot readings where you can connect with me in real time.  
+        Start a chat with me — your first 3 minutes are free!
+      </p>
 
-        <div id="paypal-container-AA6QGJM8BQU56"></div>
-        <script>
-          paypal.HostedButtons({
-            hostedButtonId: "AA6QGJM8BQU56"
-          }).render("#paypal-container-AA6QGJM8BQU56");
-        </script>
+      <!-- Buttons -->
+      <div class="buttons">
+        <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology">Start Chat</a>
+        <a href="https://my-order-link.com">Get Yours Now</a>
+      </div>
+
+      <!-- PayPal button -->
+      <div style="margin-top: 15px;">
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_self">
+          <input type="hidden" name="cmd" value="_s-xclick">
+          <input type="hidden" name="hosted_button_id" value="YOUR_BUTTON_ID">
+          <input type="image" src="paypal-button.jpg" border="0" name="submit" alt="Pay with PayPal" style="max-width: 300px;">
+          <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
       </div>
     </div>
-
-  </section>
-
-  <footer>&copy; 2025 Deadline Astrology. All rights reserved.</footer>
+  </div>
 </body>
 </html>
