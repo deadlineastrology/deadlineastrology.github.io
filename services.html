@@ -8,12 +8,16 @@
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
 
+  <!-- Load PayPal SDK with hosted-buttons component -->
+  <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+
   <style>
+    /* Your original button style */
     .service-item a.button {
       display: inline-block;
       margin-top: 1rem;
       text-align: center;
-      background-color: #0070ba;
+      background-color: #0070ba; /* PayPal blue */
       color: white;
       padding: 0.6rem 1.3rem;
       border-radius: 4px;
@@ -25,11 +29,14 @@
     .service-item a.button:hover {
       background-color: #005c99;
     }
+
+    /* Left align text and max width */
     .service-item {
       text-align: left;
       max-width: 450px;
       margin-bottom: 2rem;
     }
+
     .service-item img {
       display: block;
       max-width: 400px;
@@ -41,6 +48,7 @@
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
+
     @media (min-width: 768px) {
       .service-item {
         max-width: none;
@@ -93,14 +101,13 @@
         <h3>🪐 Birth Chart Reading — $50</h3>
         <p>In-Depth Birth Chart Reading</p>
 
-        <!-- PayPal Hosted Button HTML form -->
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-          <input type="hidden" name="cmd" value="_s-xclick" />
-          <input type="hidden" name="hosted_button_id" value="AA6QGJM8BQU56" />
-          <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
-                 border="0" name="submit" alt="PayPal - The safer, easier way to pay online!" />
-          <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1" />
-        </form>
+        <!-- PayPal hosted button container -->
+        <div id="paypal-container-AA6QGJM8BQU56"></div>
+        <script>
+          paypal.HostedButtons({
+            hostedButtonId: "AA6QGJM8BQU56"
+          }).render("#paypal-container-AA6QGJM8BQU56");
+        </script>
       </div>
     </div>
   </section>
