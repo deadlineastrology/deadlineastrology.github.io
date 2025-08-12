@@ -7,7 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
+
+  <!-- PayPal SDK (needed for hosted buttons) -->
   <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+
   <style>
     /* Layout for service items with image */
     .service-item {
@@ -29,7 +32,7 @@
       border-radius: 8px;
     }
 
-    /* Keep existing button spacing */
+    /* Extra spacing fix for buttons inside service-item */
     .service-item a.button {
       display: inline-block;
       margin-top: 1rem;
@@ -45,7 +48,7 @@
 
     <div class="service-item">
       <div class="service-text">
-        <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free </h3>
+        <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
         <p>Quick answers to key questions Live Right.</p>
         <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
            class="button" 
@@ -54,15 +57,20 @@
            Start Live Chat
         </a>
       </div>
-      <img src="assets/livechat.jpg" alt="Live Chat Psychic Reading">
+
+      <img src="assets/livechat.jpg" alt="Live Chat - Psychic Reading">
     </div>
 
     <div class="service-item">
       <div class="service-text">
         <h3>🪐 Birth Chart Reading — $50</h3>
         <p>In-Depth Birth Chart Reading</p>
+
+        <!-- PayPal hosted button container (restored) -->
         <div id="paypal-container-AA6QGJM8BQU56"></div>
         <script>
+          // Render the PayPal hosted button into the container.
+          // Make sure the hostedButtonId matches your PayPal Hosted Button config.
           paypal.HostedButtons({
             hostedButtonId: "AA6QGJM8BQU56"
           }).render("#paypal-container-AA6QGJM8BQU56");
