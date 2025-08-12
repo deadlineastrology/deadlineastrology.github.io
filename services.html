@@ -21,15 +21,20 @@
       flex-wrap: wrap;
     }
 
-    .service-text {
-      flex: 1;
-      min-width: 250px;
+    /* For the first service, image on the left */
+    .service-item.image-left {
+      flex-direction: row; /* image first, then text */
     }
 
     .service-item img {
-      max-width: 250px;
       height: auto;
       border-radius: 8px;
+      max-width: 100%; /* keep natural size but responsive */
+    }
+
+    .service-text {
+      flex: 1;
+      min-width: 250px;
     }
 
     /* Extra spacing fix for buttons inside service-item */
@@ -46,7 +51,9 @@
   <section id="services">
     <h2>🔮 Personal Readings & Services</h2>
 
-    <div class="service-item">
+    <!-- First service with image on the left -->
+    <div class="service-item image-left">
+      <img src="assets/livechat.jpg" alt="Live Chat - Psychic Reading">
       <div class="service-text">
         <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free</h3>
         <p>Quick answers to key questions Live Right.</p>
@@ -57,20 +64,16 @@
            Start Live Chat
         </a>
       </div>
-
-      <img src="assets/livechat.jpg" alt="Live Chat - Psychic Reading">
     </div>
 
+    <!-- Second service with PayPal button -->
     <div class="service-item">
       <div class="service-text">
         <h3>🪐 Birth Chart Reading — $50</h3>
         <p>In-Depth Birth Chart Reading</p>
 
-        <!-- PayPal hosted button container (restored) -->
         <div id="paypal-container-AA6QGJM8BQU56"></div>
         <script>
-          // Render the PayPal hosted button into the container.
-          // Make sure the hostedButtonId matches your PayPal Hosted Button config.
           paypal.HostedButtons({
             hostedButtonId: "AA6QGJM8BQU56"
           }).render("#paypal-container-AA6QGJM8BQU56");
