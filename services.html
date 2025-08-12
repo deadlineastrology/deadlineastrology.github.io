@@ -7,7 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <script src="header.js" defer></script>
-  <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD"></script>
+
+  <!-- Load PayPal SDK once -->
+  <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&currency=USD"></script>
 
   <style>
     /* Keep your original button style */
@@ -70,8 +72,6 @@
         text-align: left;
       }
     }
-
-    /* Preserve your original header and body styling by not changing anything else */
   </style>
 </head>
 <body>
@@ -96,25 +96,44 @@
     </div>
 
     <!-- Birth Chart Reading -->
+    <div class="service-item">
+      <div>
         <h3>🪐 Birth Chart Reading — $50</h3>
         <p>In-Depth Birth Chart Reading</p>
-        <script 
-  src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD">
-</script>
-<div id="paypal-container-AA6QGJM8BQU56"></div>
-<script>
-  paypal.HostedButtons({
-    hostedButtonId: "AA6QGJM8BQU56",
-  }).render("#paypal-container-AA6QGJM8BQU56")
-</script>  </section>
+        <!-- PayPal Button Container -->
+        <div id="paypal-button-container"></div>
+      </div>
+    </div>
+  </section>
 
   <footer>&copy; 2025 Deadline Astrology. All rights reserved.</footer>
 
-  <!-- PayPal Render Script -->
+  <!-- PayPal Button Rendering Script -->
   <script>
-    paypal.HostedButtons({
-      hostedButtonId: "AA6QGJM8BQU56"
-    }).render("#paypal-container-AA6QGJM8BQU56");
+    paypal.Buttons({
+      style: {
+        layout: 'vertical',
+        color:  'blue',
+        shape:  'rect',
+        label:  'paypal'
+      },
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '50.00'
+            },
+            reference_id: 'AA6QGJM8BQU56' // your hosted button id as reference
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Transaction completed by ' + details.payer.name.given_name);
+          // You can add additional logic here after successful payment
+        });
+      }
+    }).render('#paypal-button-container');
   </script>
 </body>
 </html>
