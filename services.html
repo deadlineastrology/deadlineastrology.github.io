@@ -12,12 +12,12 @@
   <script src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&currency=USD"></script>
 
   <style>
-    /* Keep your original button style */
+    /* Your existing styles unchanged */
     .service-item a.button {
       display: inline-block;
       margin-top: 1rem;
       text-align: center;
-      background-color: #0070ba; /* PayPal blue */
+      background-color: #0070ba;
       color: white;
       padding: 0.6rem 1.3rem;
       border-radius: 4px;
@@ -29,14 +29,11 @@
     .service-item a.button:hover {
       background-color: #005c99;
     }
-
-    /* Keep left-aligned text for all service items */
     .service-item {
       text-align: left;
       max-width: 450px;
       margin-bottom: 2rem;
     }
-
     .service-item img {
       display: block;
       max-width: 400px;
@@ -48,8 +45,6 @@
       border-radius: 4px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
-
-    /* Desktop flex layout for services */
     @media (min-width: 768px) {
       .service-item {
         max-width: none;
@@ -64,7 +59,7 @@
         margin: 0;
         flex-shrink: 0;
       }
-      .service-item > div, /* container around text + button */
+      .service-item > div,
       .service-item > h3,
       .service-item > p,
       .service-item > a.button {
@@ -100,7 +95,6 @@
       <div>
         <h3>🪐 Birth Chart Reading — $50</h3>
         <p>In-Depth Birth Chart Reading</p>
-        <!-- PayPal Button Container -->
         <div id="paypal-button-container"></div>
       </div>
     </div>
@@ -108,7 +102,6 @@
 
   <footer>&copy; 2025 Deadline Astrology. All rights reserved.</footer>
 
-  <!-- PayPal Button Rendering Script -->
   <script>
     paypal.Buttons({
       style: {
@@ -123,14 +116,13 @@
             amount: {
               value: '50.00'
             },
-            reference_id: 'AA6QGJM8BQU56' // your hosted button id as reference
+            reference_id: 'AA6QGJM8BQU56'
           }]
         });
       },
       onApprove: function(data, actions) {
         return actions.order.capture().then(function(details) {
           alert('Transaction completed by ' + details.payer.name.given_name);
-          // You can add additional logic here after successful payment
         });
       }
     }).render('#paypal-button-container');
