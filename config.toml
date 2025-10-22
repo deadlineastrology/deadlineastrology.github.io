@@ -1,4 +1,4 @@
-baseURL = "https://deadlineastrologyblog.github.io/"
+baseURL = "https://deadlineastrology.github.io/"
 languageCode = "en-us"
 title = "Deadline Astrology Blog"
 theme = "deadline-mystic"
