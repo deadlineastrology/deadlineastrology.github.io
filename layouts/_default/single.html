@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="post container">
+  <header>
+    <h1>{{ .Title }}</h1>
+    <p class="post-meta">{{ .Date.Format "January 2, 2006" }}</p>
+    {{ with .Params.featured }}
+      <img class="featured" src="/{{ . }}" alt="Featured image">
+    {{ end }}
+  </header>
+  <section class="post-content">
+    {{ .Content }}
+  </section>
+</article>
+{{ end }}
