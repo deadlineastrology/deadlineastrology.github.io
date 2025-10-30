@@ -1,0 +1,51 @@
+---
+layout: default
+title: Horoscopes
+permalink: /horoscopes/
+---
+
+<h1 style="text-align:center;">Latest Channeled Forecasts</h1>
+<p style="text-align:center;">🌟 Psychically channeled Tarot & Astrology readings, updated daily on Medium.</p>
+
+<ul id="medium-feed" style="list-style-type: none; padding: 0; text-align: center;">
+  <li>Loading posts...</li>
+</ul>
+
+<script>
+fetch('https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@deadlineastrology')
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById('medium-feed');
+    container.innerHTML = '';
+
+    data.items.slice(0, 6).forEach(item => {
+      const li = document.createElement('li');
+      li.style.margin = '30px 0';
+      li.style.listStyle = 'none';
+
+      // Extract first image from content
+      let imgMatch = item.content.match(/<img.*?src=["'](.*?)["']/);
+      let image = imgMatch ? imgMatch[1] : 'https://via.placeholder.com/700x400?text=Tarot+%2B+Astrology';
+
+      li.innerHTML = `
+        <div style="max-width: 700px; margin: 0 auto; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: left;">
+          <a href="${item.link}" target="_blank" style="text-decoration: none; color: inherit;">
+            <img src="${image}" alt="${item.title}" style="width: 100%; height: auto; display: block;">
+            <div style="padding: 16px;">
+              <h3 style="margin-top: 0; font-size: 1.25rem; color: #4B0082;">${item.title}</h3>
+              <small style="color: #777;">${new Date(item.pubDate).toLocaleDateString()}</small>
+              <p style="margin-top: 10px; color: #444;">${item.description.slice(0, 120)}...</p>
+              <p style="color: #4B0082; font-weight: bold;">Read more →</p>
+            </div>
+          </a>
+        </div>
+      `;
+
+      container.appendChild(li);
+    });
+  })
+  .catch(err => {
+    document.getElementById('medium-feed').innerHTML = '<li>⚠️ Failed to load Medium posts.</li>';
+    console.error('Medium feed error:', err);
+  });
+</script>

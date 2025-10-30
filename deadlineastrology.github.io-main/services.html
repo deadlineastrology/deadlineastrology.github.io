@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services - Deadline Astrology</title>
+  <link href="https://fonts.googleapis.com/css2?family=UnifrakturCook&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script src="header.js" defer></script>
+  
+  <!-- PayPal SDK -->
+  <script 
+    src="https://www.paypal.com/sdk/js?client-id=BAA7Xz_enaMGOxo9WE9hyv0Yf4_6WZHxnH-1WAQFg5nyGRAS_i1uitHZTPdFmc_2UaF3vQssaUNDbmNE3g&components=hosted-buttons&enable-funding=venmo&currency=USD">
+  </script>
+  
+  <style>
+    .service-item a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      text-align: center;
+    }
+    .centered-content {
+      text-align: center;
+    }
+    .centered-content img {
+      display: block;
+      margin: 0.5rem auto;
+      width: 600px;
+      max-width: 100%;
+      height: auto;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+  
+  <section id="services">
+    <h2>🔮 Personal Readings & Services</h2>
+
+    <!-- Live Chat Section -->
+    <div class="service-item centered-content">
+      <h3>⚡️ Live Chat - Psychic Reading — First 3 minutes Free </h3>
+      <p>Quick answers to key questions Live Right.</p>
+      <img src="assets/livechat.jpg" alt="Live Chat" />
+      <a href="https://psychic.bitwine.com/psychics/497617-timeline_astrology" 
+         class="button" 
+         target="_blank" 
+         rel="noopener noreferrer">
+         Start Live Chat
+      </a>
+    </div>
+
+    <!-- Birth Chart Reading -->
+    <div class="service-item centered-content">
+      <h3>🪐 Birth Chart Reading — $50</h3>
+      <p>In-Depth Birth Chart Reading</p>
+      <div id="paypal-container-AA6QGJM8BQU56"></div>
+    </div>
+
+    <!-- Astrology + Tarot Video Reading -->
+    <div class="service-item centered-content">
+      <h3>🌌 Personal Astrology + Tarot Video Reading — $100</h3>
+      <p>Combined Astrology & Tarot Guidance delivered in a detailed video format</p>
+      <div id="paypal-container-8A8W9Z68ZDYXU"></div>
+    </div>
+
+  </section>
+
+  <footer>&copy; 2025 Deadline Astrology. All rights reserved.</footer>
+
+  <!-- PayPal Render Script -->
+  <script>
+    // First button (Birth Chart Reading)
+    paypal.HostedButtons({
+      hostedButtonId: "AA6QGJM8BQU56",
+    }).render("#paypal-container-AA6QGJM8BQU56");
+
+    // Second button (Astrology + Tarot Video Reading)
+    paypal.HostedButtons({
+      hostedButtonId: "8A8W9Z68ZDYXU",
+    }).render("#paypal-container-8A8W9Z68ZDYXU");
+  </script>
+</body>
+</html>

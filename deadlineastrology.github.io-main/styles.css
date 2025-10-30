@@ -1,0 +1,243 @@
+/* ========== RESET ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ========== GLOBAL STYLES ========== */
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #eaeaea;
+  overflow-x: hidden;
+  background: url('/assets/BackgroundDA.png') no-repeat center center fixed;
+  background-size: cover;
+  position: relative;
+}
+
+/* Overlay for dark readability */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.75);
+  z-index: -1;
+}
+
+/* ========== HEADER ========== */
+header {
+  background-color: rgba(17, 17, 17, 0.85);
+  padding: 1rem 2rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.6);
+  border-bottom: 1px solid #333;
+  z-index: 2;
+}
+
+header img.site-banner {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 16px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease;
+}
+
+header img.site-banner:hover {
+  transform: scale(1.01);
+}
+
+/* ========== NAVIGATION ========== */
+#main-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+#main-nav a {
+  color: #b2d6ff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem;
+  position: relative;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+#main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #b2d6ff;
+  transition: width 0.3s ease-in-out;
+}
+
+#main-nav a:hover::after,
+#main-nav a.active::after {
+  width: 100%;
+}
+
+#main-nav a:hover {
+  color: #d3e4ff;
+}
+
+#main-nav a:active {
+  animation: flicker 1.2s linear;
+}
+
+/* ========== MOBILE MENU ========== */
+#menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  #main-nav {
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  #main-nav.open {
+    max-height: 500px;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+}
+
+/* ========== SECTIONS ========== */
+main, section, .blog-post, .service-item {
+  background: rgba(20, 20, 20, 0.85);
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  max-width: 1000px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ========== HERO SECTION ========== */
+#hero, #intro-actions {
+  text-align: center;
+  background: linear-gradient(180deg, rgba(0,0,0,0.7), rgba(0,0,0,0.4));
+  padding: 3rem 1rem;
+}
+
+#hero h1,
+#intro-actions h1 {
+  font-family: 'UnifrakturCook', cursive;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+}
+
+#hero p,
+#intro-actions p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* ========== BUTTONS ========== */
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.button, .reading-button {
+  background: #b2d6ff;
+  color: #111;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  user-select: none;
+}
+
+.button:hover,
+.reading-button:hover {
+  background: #9ac4f7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+.button:active,
+.reading-button:active {
+  background: #86b5f0;
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+/* ========== FORECAST VIDEO ========== */
+.forecast-video {
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* ========== BLOG POST ========== */
+.blog-post {
+  text-align: left;
+}
+
+.blog-post h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.blog-img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+/* ========== NEON FLICKER ANIMATION ========== */
+@keyframes flicker {
+  0%   { opacity: 1; }
+  5%   { opacity: 0.5; }
+  10%  { opacity: 1; }
+  15%  { opacity: 0.6; }
+  20%  { opacity: 1; }
+  30%  { opacity: 0.4; }
+  40%  { opacity: 1; }
+  60%  { opacity: 0.7; }
+  70%  { opacity: 1; }
+  85%  { opacity: 0.5; }
+  100% { opacity: 1; }
+}

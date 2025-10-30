@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deadline Astrology</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="header.js" defer></script>
+  <style>
+    /* Apply fonts */
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #121212; /* optional: dark background for contrast */
+      color: #eaeaea;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-weight: 400;
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      color: #b2d6ff; /* match your accent blue */
+    }
+
+    #intro-actions {
+      padding: 4rem 1rem 6rem;
+      background: linear-gradient(180deg, rgba(0,0,0,0.8), rgba(0,0,0,0.5));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      text-align: center;
+    }
+
+    .cta-buttons {
+      margin-top: 2rem;
+    }
+
+    .button {
+      background: #b2d6ff;
+      color: #0a0a0a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: background 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+      box-shadow: none;
+    }
+
+    .button:hover {
+      background: #8ab8ff;
+      transform: scale(1.05);
+      box-shadow: none;
+    }
+
+    /* Hero image under the button */
+    .hero-image {
+      margin-top: 2rem;
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      color: #aaa;
+      background-color: #0d0d0d;
+    }
+  </style>
+</head>
+<body>
+  <div id="header-container"></div>
+
+  <!-- 🔮 Main Action Section -->
+  <section id="intro-actions" class="section hero">
+    <h1>FREE 3 MINUTE READING</h1>
+    <div class="cta-buttons">
+      <a href="about.html" class="button">🔮 Get Started</a>
+    </div>
+    <img src="assets/homepage.jpg" alt="Astrology background" class="hero-image" />
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Deadline Astrology. All rights reserved.</p>
+  </footer>
+
+  <!-- Mailchimp Popup Script -->
+  <script id="mcjs">
+    !function(c,h,i,m,p){
+      m=c.createElement(h),
+      p=c.getElementsByTagName(h)[0],
+      m.async=1,
+      m.src=i,
+      p.parentNode.insertBefore(m,p)
+    }(document,"script","https://chimpstatic.com/mcjs-connected/js/users/ddda029dddde738dd44f21fc5/a0ddcd51781ea4ea00cca877a.js");
+  </script>
+</body>
+</html>
